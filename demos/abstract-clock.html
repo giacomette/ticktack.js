@@ -96,6 +96,12 @@
             
           };
           
+          function padLeft(n){
+            n = n.toString();
+            if(n.length < 2) n = "0" + n;
+            return n;
+          }
+          
           function drawNumber(){
             
             var ctx = this.ctx;
@@ -114,7 +120,7 @@
             ctx.fill();
             ctx.textAlign = "start";
             ctx.fillStyle = color.accent;
-            ctx.fillText(":"+dateText.minutes, center / 2, center );
+            ctx.fillText(":"+padLeft(dateText.minutes), center / 2, center );
             ctx.fill();    
             ctx.closePath();
             
